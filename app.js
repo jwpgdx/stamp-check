@@ -55,8 +55,8 @@ app.get("/health", (req, res) => {
   res.json({ status: "ok", uptime: process.uptime() });
 });
 
-// Schedule: Daily at 09:00 AM
-cron.schedule("0 9 * * *", () => {
+// Schedule: Daily at 12:00 PM
+cron.schedule("0 12 * * *", () => {
   logger.info("Scheduled daily check started");
   checker.runAll();
 });
