@@ -1,9 +1,9 @@
 services:
   - type: web
-    name: jlpt-monitor
+    name: stamp-check
     env: node
     plan: free
-    buildCommand: npm install && npx playwright install --with-deps
+    buildCommand: npm install && npx playwright install
     startCommand: npm start
     envVars:
       - key: NODE_ENV
