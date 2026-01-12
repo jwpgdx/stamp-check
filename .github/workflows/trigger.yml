@@ -1,0 +1,14 @@
+name: Daily Attendance Trigger
+
+on:
+  schedule:
+    # 00:00 UTC = 09:00 KST (Korea Standard Time)
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+
+jobs:
+  wake_up_and_check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Attendance Check
+        run: curl https://stamp-check.onrender.com/api/run-check
